@@ -1,7 +1,9 @@
 package com.example.examen_javafx;
 
 import com.example.examen_javafx.model.BD;
+import com.example.examen_javafx.model.Categorie;
 import com.example.examen_javafx.model.Produit;
+import com.example.examen_javafx.repository.CategorieRepository;
 import com.example.examen_javafx.repository.ProduitRepository;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -49,7 +51,7 @@ public class ProduitController implements Initializable {
     private TextField champQuantite;
 
     @FXML
-    private ComboBox<?> combo;
+    private ComboBox<Categorie> combo;
 
     @FXML
     void btnAdd(ActionEvent event) {
@@ -99,7 +101,7 @@ public class ProduitController implements Initializable {
     void btnDelete(ActionEvent event) {
         int id=this.table.getSelectionModel().getSelectedItem().getId();
         try {
-            String sql=" DELETE FROM produit WHERE id = ?";
+            String sql=" DELETE FROM categorie WHERE id = ?";
             PreparedStatement statement=con.prepareStatement(sql);
             statement.setInt(1,id);
             statement.executeUpdate();
@@ -132,11 +134,17 @@ public class ProduitController implements Initializable {
         cQuantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
         cPrix.setCellValueFactory(new PropertyValueFactory<>("prix"));
         cCategorie.setCellValueFactory(new PropertyValueFactory<>("categorie_id"));
+        table.setItems(list);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bd=new BD();
         con=bd.getConnection();
         affiche();
+        CategorieRepository categorieRepository=new CategorieRepository();
+        ObservableList<Categorie> categorie = categorieRepository.getAllCategorie();
+        categorie.addAll(categorieRepository.getAllCategorie());
+        combo.setItems(categorie);
+
     }
 }
