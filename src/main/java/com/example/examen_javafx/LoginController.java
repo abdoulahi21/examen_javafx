@@ -56,7 +56,7 @@ public class LoginController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText("Vous êtes maintenant connecté");
                 alert.showAndWait();
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("accueil.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
                 Scene scene = new Scene(fxmlLoader.load());
                 Stage stage = new Stage();
                 stage.setTitle("Accueil");

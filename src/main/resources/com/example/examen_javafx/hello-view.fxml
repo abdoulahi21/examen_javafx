@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.examen_javafx.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane accessibleRole="BUTTON" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="677.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.HelloController">
+   <children>
+      <VBox prefHeight="455.0" prefWidth="150.0" style="-fx-background-color: #96151;">
+         <children>
+            <AnchorPane prefHeight="455.0" prefWidth="170.0" style="-fx-background-color: #E96151;">
+               <children>
+                  <Pane layoutY="13.0" prefHeight="62.0" prefWidth="200.0" />
+                  <Button layoutX="61.0" layoutY="110.0" mnemonicParsing="false" onAction="#pageAccueil" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #E96151;" text="Accueil" textFill="#f6f5f5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="62.0" layoutY="155.0" mnemonicParsing="false" onAction="#pageProduit" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #E96151;" text="Produit" textFill="#f6f5f5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="69.0" layoutY="193.0" mnemonicParsing="false" onAction="#pageCategorie" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #E96151;" text="Categorie" textFill="#f6f5f5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="31.0" layoutY="227.0" mnemonicParsing="false" onAction="#pagedocument" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: #E96151;" text="Extraire Document" textFill="#f6f5f5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
