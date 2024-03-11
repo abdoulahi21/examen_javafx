@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -24,15 +23,12 @@ public class RegisterController implements Initializable {
     private TextField champTelephone;
     @FXML
     private TextField champLogin;
-
     @FXML
     private TextField champNomComplet;
-
     @FXML
     private PasswordField champPassword;
     @FXML
     private TextField champEmail;
-
     @FXML
     void btnAnnuler(ActionEvent event)  {
     }

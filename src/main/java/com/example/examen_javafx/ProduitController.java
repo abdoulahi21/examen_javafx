@@ -140,8 +140,7 @@ public class ProduitController implements Initializable {
 
       }
     }
-    public void affiche()
-    {
+    public void affiche(){
         ProduitRepository produitRepository=new ProduitRepository();
         ObservableList<Produit> list = produitRepository.getAllProduit();
         cId.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -170,7 +169,6 @@ public class ProduitController implements Initializable {
         affiche();
         CategorieRepository categorieRepository=new CategorieRepository();
         ObservableList<Categorie> categorie = categorieRepository.getAllCategorie();
-        categorie.addAll(categorieRepository.getAllCategorie());
         combo.setItems(categorie);
 
     }

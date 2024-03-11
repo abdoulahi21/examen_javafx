@@ -80,8 +80,8 @@ public class CategorieController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        bd=new BD();
-        con=bd.getConnection();
+         bd=new BD();
+         con=bd.getConnection();
         affiche();
 
     }

@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
 <AnchorPane prefHeight="428.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.StatistiqueController">
-
+   <children>
+      <PieChart fx:id="pieChart" prefHeight="197.0" prefWidth="577.0" />
+      <BarChart fx:id="barChart" layoutX="14.0" layoutY="213.0" prefHeight="213.0" prefWidth="537.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
 </AnchorPane>
