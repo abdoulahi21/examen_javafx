@@ -9,16 +9,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="403.0" prefWidth="623.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.ProduitController">
+<AnchorPane prefHeight="403.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.ProduitController">
    <children>
-      <TableView fx:id="table" layoutX="-1.0" layoutY="200.0" onMouseClicked="#charge" prefHeight="200.0" prefWidth="623.0">
+      <TableView fx:id="table" layoutX="-1.0" layoutY="200.0" onMouseClicked="#charge" prefHeight="200.0" prefWidth="603.0">
         <columns>
           <TableColumn fx:id="cId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="cLibelle" prefWidth="130.6666488647461" text="Libelle" />
             <TableColumn fx:id="cQuantite" prefWidth="111.33332824707031" text="Quantite" />
-            <TableColumn fx:id="cPrix" prefWidth="95.33331298828125" text="Prix" />
-            <TableColumn fx:id="cCategorie" prefWidth="101.33334350585938" text="Categorie" />
-            <TableColumn prefWidth="114.66668701171875" text="Actions" />
+            <TableColumn fx:id="cPrix" prefWidth="132.6666259765625" text="Prix" />
+            <TableColumn fx:id="cCategorie" prefWidth="152.0" text="Categorie" />
         </columns>
       </TableView>
       <Label layoutX="26.0" layoutY="31.0" text="Libelle" />
@@ -31,7 +30,7 @@
       <ComboBox fx:id="combo" layoutX="284.0" layoutY="119.0" prefHeight="25.0" prefWidth="225.0" />
       <Button layoutX="26.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnAdd" style="-fx-background-color: white;" text="AJOUTER" textFill="#e96151" />
       <Button layoutX="106.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnReset" style="-fx-background-color: white;" text="ANNULER" textFill="#e96151" />
-      <TextField layoutX="435.0" layoutY="165.0" promptText="recherche" />
+      <TextField fx:id="champSearch" layoutX="435.0" layoutY="165.0" onKeyReleased="#onSearch" promptText="recherche" />
       <Button layoutX="189.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnUpdate" style="-fx-background-color: white;" text="MODIFIER" textFill="#e96151" />
       <Button layoutX="274.0" layoutY="165.0" mnemonicParsing="false" onAction="#btnDelete" style="-fx-background-color: white;" text="SUPPRIMER" textFill="#e96151" />
    </children>

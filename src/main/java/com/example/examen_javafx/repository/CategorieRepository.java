@@ -15,13 +15,11 @@ public class CategorieRepository {
     Connection connection;
     public ObservableList<Categorie> getAllCategorie() {
         connection = bd.getConnection();
-        // List<Medecin> liste = null;
         ObservableList<Categorie> list = null;
         try {
             list = FXCollections.observableArrayList();
             String sql = "SELECT * FROM categorie ";
             PreparedStatement statement = connection.prepareStatement(sql);
-
             ResultSet rs = statement.executeQuery();
             while (rs.next()) {
                 Categorie categorie = new Categorie();

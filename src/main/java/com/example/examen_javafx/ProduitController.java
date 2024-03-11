@@ -14,11 +14,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -52,29 +54,42 @@ public class ProduitController implements Initializable {
 
     @FXML
     private ComboBox<Categorie> combo;
+    @FXML
+    private TextField champSearch;
+    private int getIdCategorie(String libelleCategorie) throws SQLException {
+        String sql = "select id from categorie where libelle = ?";
+        PreparedStatement statement = con.prepareStatement(sql);
+        statement.setString(1, libelleCategorie);
+        ResultSet resultSet = statement.executeQuery();
+        if (resultSet.next()) {
+            return resultSet.getInt("id");
+        } else {
+            throw new IllegalArgumentException("Catégorie introuvable : " + libelleCategorie);
+        }
+    }
 
     @FXML
     void btnAdd(ActionEvent event) {
-        String sql="insert into produit(libelle,quantite,prix,idcategorie) values(?,?,?,?)";
+        String sql = "insert into produit(libelle,quantite,prix,idcategorie) values(?,?,?,?)";
         try {
-            PreparedStatement statement=con.prepareStatement(sql);
-            statement.setString(1,champLibelle.getText());
-            statement.setString(2,champQuantite.getText());
-            statement.setString(3,champPrix.getText());
-            statement.setString(4,combo.getValue().toString());
-            statement.execute();
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, champLibelle.getText());
+            statement.setInt(2, Integer.parseInt(champQuantite.getText()));
+            statement.setInt(3, Integer.parseInt(champPrix.getText()));
+              statement.setInt(4, getIdCategorie(combo.getValue().getLibelle()));
+            statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         affiche();
         btnReset(event);
     }
-
-    @FXML
+        @FXML
     void btnReset(ActionEvent event) {
         champLibelle.setText("");
         champPrix.setText("");
         champQuantite.setText("");
+        combo.setValue(null);
     }
 
     @FXML
@@ -83,11 +98,11 @@ public class ProduitController implements Initializable {
         String sql = "UPDATE produit SET libelle=?,quantite=?,prix=?,idcategorie=? WHERE id=?";
         try {
             PreparedStatement statement = con.prepareStatement(sql);
-            statement.setString(1, cLibelle.getText());
+            statement.setString(1, champLibelle.getText());
             statement.setInt(2, Integer.parseInt(champQuantite.getText()));
             statement.setInt(3, Integer.parseInt(cPrix.getText()));
             statement.setString(4, String.valueOf(combo.getValue()));
-            statement.setInt(4, id);
+            statement.setInt(5, id);
             statement.executeUpdate();
 
 
@@ -115,7 +130,7 @@ public class ProduitController implements Initializable {
 
     @FXML
     void charge(MouseEvent event) {
-        Produit produit=new Produit();
+        Produit produit= new Produit();
         produit=table.getSelectionModel().getSelectedItem();
       if (event.getClickCount()==2)
       {
@@ -133,9 +148,21 @@ public class ProduitController implements Initializable {
         cLibelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
         cQuantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
         cPrix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-        cCategorie.setCellValueFactory(new PropertyValueFactory<>("categorie_id"));
+        cCategorie.setCellValueFactory(new PropertyValueFactory<>("idcategorie"));
         table.setItems(list);
     }
+    @FXML
+    void onSearch(KeyEvent event) {
+        ProduitRepository produitRepository=new ProduitRepository();
+        ObservableList<Produit> list = produitRepository.search(champSearch.getText());
+        cId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        cLibelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
+        cQuantite.setCellValueFactory(new PropertyValueFactory<>("quantite"));
+        cPrix.setCellValueFactory(new PropertyValueFactory<>("prix"));
+        cCategorie.setCellValueFactory(new PropertyValueFactory<>("idcategorie"));
+        table.setItems(list);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bd=new BD();
