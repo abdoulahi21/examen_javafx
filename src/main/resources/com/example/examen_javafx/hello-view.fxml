@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane accessibleRole="BUTTON" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="455.0" prefWidth="677.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.HelloController">
+<AnchorPane accessibleRole="BUTTON" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="779.0" style="-fx-background-color: none;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.HelloController">
    <children>
-      <VBox prefHeight="455.0" prefWidth="150.0" style="-fx-background-color: #E96151;">
+      <VBox layoutY="-7.0" prefHeight="435.0" prefWidth="200.0" style="-fx-background-color: #E96151;">
          <children>
-            <AnchorPane prefHeight="455.0" prefWidth="170.0" style="-fx-background-color: #E96151;">
+            <AnchorPane prefHeight="439.0" prefWidth="200.0" style="-fx-background-color: #E96151;">
                <children>
-                  <Pane layoutY="13.0" prefHeight="62.0" prefWidth="200.0" />
-                  <Button layoutX="61.0" layoutY="110.0" mnemonicParsing="false" onAction="#pageAccueil" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #E96151;" text="Accueil" textFill="#f6f5f5">
+                  <Pane layoutY="101.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: white;" />
+                  <Button layoutX="23.0" layoutY="116.0" mnemonicParsing="false" onAction="#pageDashboard" prefHeight="27.0" prefWidth="160.0" style="-fx-background-color: #E96151;" text="Dashboard" textFill="#f6f5f5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="9.0" layoutY="151.0" mnemonicParsing="false" onAction="#pageProduit" prefHeight="33.0" prefWidth="160.0" style="-fx-background-color: #E96151;" text="Produit" textFill="#f6f5f5">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="62.0" layoutY="155.0" mnemonicParsing="false" onAction="#pageProduit" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #E96151;" text="Produit" textFill="#f6f5f5">
+                  <Button layoutX="21.0" layoutY="190.0" mnemonicParsing="false" onAction="#pageCategorie" prefHeight="33.0" prefWidth="152.0" style="-fx-background-color: #E96151;" text="Categorie" textFill="#f6f5f5">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="69.0" layoutY="193.0" mnemonicParsing="false" onAction="#pageCategorie" prefHeight="33.0" prefWidth="107.0" style="-fx-background-color: #E96151;" text="Categorie" textFill="#f6f5f5">
+                  <Button layoutX="22.0" layoutY="227.0" mnemonicParsing="false" onAction="#pagedocument" prefHeight="33.0" prefWidth="152.0" style="-fx-background-color: #E96151;" text="Document" textFill="#f6f5f5">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="31.0" layoutY="227.0" mnemonicParsing="false" onAction="#pagedocument" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: #E96151;" text="Extraire Document" textFill="#f6f5f5">
-                     <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                     </font>
-                  </Button>
+                  <Pane prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label layoutX="62.0" layoutY="27.0" text="ONLINE ">
+                           <font>
+                              <Font name="Bookman Old Style" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="83.0" layoutY="52.0" text="SHOP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
                <effect>
                   <DropShadow />
@@ -41,5 +60,17 @@
             </AnchorPane>
          </children>
       </VBox>
+      <Pane fx:id="dynamiquePage" layoutX="201.0" layoutY="-2.0" prefHeight="428.0" prefWidth="577.0">
+         <children>
+            <Pane layoutX="-1.0" prefHeight="43.0" prefWidth="586.0" style="-fx-background-color: #E96151;">
+               <children>
+                  <Label fx:id="nomUser" alignment="CENTER" layoutX="43.0" layoutY="8.0" prefHeight="17.0" prefWidth="377.0" textFill="#f2eded">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children></Pane>
    </children>
 </AnchorPane>

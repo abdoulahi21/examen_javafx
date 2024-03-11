@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="443.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.CategorieController">
+<AnchorPane prefHeight="400.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.CategorieController">
    <children>
       <Label layoutX="57.0" layoutY="70.0" text="Label" />
       <TextField fx:id="champLibelle" layoutX="57.0" layoutY="94.0" prefHeight="25.0" prefWidth="294.0" />
       <Button layoutX="57.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnAdd" text="AJOUTER" />
       <Button layoutX="136.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnAnnuler" text="ANNULER" />
-      <TableView fx:id="table" layoutY="200.0" onMouseClicked="#charge" prefHeight="200.0" prefWidth="443.0">
+      <TableView fx:id="table" layoutX="18.0" layoutY="200.0" onMouseClicked="#charge" prefHeight="200.0" prefWidth="554.0">
         <columns>
-          <TableColumn fx:id="cid" prefWidth="107.99996948242188" text="Id" />
-          <TableColumn fx:id="clibelle" prefWidth="334.0" text="Libelle" />
+          <TableColumn fx:id="cid" prefWidth="143.99996376037598" text="Id" />
+          <TableColumn fx:id="clibelle" prefWidth="408.6666717529297" text="Libelle" />
         </columns>
       </TableView>
       <Button layoutX="216.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnDelete" text="SUPPRIMER" />
