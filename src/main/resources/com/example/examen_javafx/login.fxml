@@ -4,25 +4,44 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.LoginController">
    <children>
-      <AnchorPane layoutY="-4.0" prefHeight="431.0" prefWidth="224.0" style="-fx-background-color: #E96151;" />
-      <Label layoutX="272.0" layoutY="126.0" text="Nom Utilisateur">
+      <AnchorPane layoutY="-4.0" prefHeight="431.0" prefWidth="224.0" style="-fx-background-color: #E96151;">
+         <children>
+            <ImageView fitHeight="325.0" fitWidth="224.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect></AnchorPane>
+      <Label layoutX="272.0" layoutY="156.0" text="Nom Utilisateur">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="champLogin" layoutX="272.0" layoutY="156.0" prefHeight="25.0" prefWidth="281.0" promptText="nom utilisateur" />
-      <PasswordField fx:id="champPassword" layoutX="272.0" layoutY="229.0" prefHeight="25.0" prefWidth="281.0" promptText="mot de passe" />
-      <Label layoutX="272.0" layoutY="202.0" text="Mot de Passe">
+      <TextField fx:id="champLogin" layoutX="272.0" layoutY="186.0" prefHeight="25.0" prefWidth="281.0" promptText="nom utilisateur" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
+      <PasswordField fx:id="champPassword" layoutX="272.0" layoutY="259.0" prefHeight="25.0" prefWidth="281.0" promptText="mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
+      <Label layoutX="272.0" layoutY="232.0" text="Mot de Passe">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="310.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnConnect" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #E96151;" text="Se Connecter" textFill="#fbf0f0" />
-      <Button layoutX="425.0" layoutY="272.0" mnemonicParsing="false" onAction="#btnRegister" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #E96151;" text="S'inscrire" textFill="#f8f0f0" />
+      <Button layoutX="310.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnConnect" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #E96151;" text="Se Connecter" textFill="#fbf0f0" />
+      <Button layoutX="425.0" layoutY="302.0" mnemonicParsing="false" onAction="#btnRegister" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #E96151;" text="S'inscrire" textFill="#f8f0f0" />
+      <ImageView fitHeight="95.0" fitWidth="99.0" layoutX="348.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="358.0" layoutY="67.0" text="LOGIN" textFill="#e96151">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

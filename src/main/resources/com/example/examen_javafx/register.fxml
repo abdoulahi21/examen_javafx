@@ -23,13 +23,13 @@
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="champNomComplet" layoutX="95.0" layoutY="124.0" prefHeight="25.0" prefWidth="353.0" />
+      <TextField fx:id="champNomComplet" layoutX="95.0" layoutY="124.0" prefHeight="25.0" prefWidth="353.0" promptText="nom complet" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="95.0" layoutY="257.0" text="Login">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="champLogin" layoutX="95.0" layoutY="278.0" prefHeight="25.0" prefWidth="353.0" />
+      <TextField fx:id="champLogin" layoutX="95.0" layoutY="278.0" prefHeight="25.0" prefWidth="353.0" promptText="login" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="95.0" layoutY="311.0" text="Mot de Passe">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
@@ -37,18 +37,18 @@
       </Label>
       <Button layoutX="166.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnValider" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #E96151;" text="Register" textFill="#f6f1f1" />
       <Button layoutX="278.0" layoutY="382.0" mnemonicParsing="false" onAction="#btnAnnuler" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: #E96151;" text="Annuler" textFill="#f6f1f1" />
-      <PasswordField fx:id="champPassword" layoutX="94.0" layoutY="337.0" prefHeight="25.0" prefWidth="353.0" />
+      <PasswordField fx:id="champPassword" layoutX="94.0" layoutY="337.0" prefHeight="25.0" prefWidth="353.0" promptText="mot de passe" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="95.0" layoutY="157.0" text="Email">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="champEmail" layoutX="95.0" layoutY="181.0" prefHeight="25.0" prefWidth="353.0" />
+      <TextField fx:id="champEmail" layoutX="95.0" layoutY="181.0" prefHeight="25.0" prefWidth="353.0" promptText="email" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="95.0" layoutY="206.0" text="Telephone">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="champTelephone" layoutX="95.0" layoutY="230.0" prefHeight="25.0" prefWidth="353.0" />
+      <TextField fx:id="champTelephone" layoutX="95.0" layoutY="230.0" prefHeight="25.0" prefWidth="353.0" promptText="telephone" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
    </children>
 </AnchorPane>

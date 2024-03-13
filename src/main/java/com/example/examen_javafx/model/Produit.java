@@ -56,4 +56,9 @@ public class Produit {
     public void setIdcategorie(Integer idcategorie) {
         this.idcategorie = idcategorie;
     }
+
+    @Override
+    public String toString() {
+        return "Libelle: "+libelle + ", Quantite: "+quantite+"\n" ;
+    }
 }

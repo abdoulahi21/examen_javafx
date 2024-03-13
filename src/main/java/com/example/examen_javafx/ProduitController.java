@@ -5,6 +5,7 @@ import com.example.examen_javafx.model.Categorie;
 import com.example.examen_javafx.model.Produit;
 import com.example.examen_javafx.repository.CategorieRepository;
 import com.example.examen_javafx.repository.ProduitRepository;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

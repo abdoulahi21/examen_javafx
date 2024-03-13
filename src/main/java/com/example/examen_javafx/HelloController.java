@@ -1,11 +1,13 @@
 package com.example.examen_javafx;
 
 import com.example.examen_javafx.model.BD;
+import com.example.examen_javafx.repository.ProduitRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import java.io.IOException;
@@ -16,7 +18,7 @@ import java.util.ResourceBundle;
 public class HelloController implements Initializable {
     @FXML
     private Pane dynamiquePage;
-   ;
+
 
     BD bd;
     Connection con=null;
@@ -51,6 +53,8 @@ public class HelloController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        bd=new BD();
+        con= bd.getConnection();
 
     }
 }

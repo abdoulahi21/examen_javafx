@@ -2,8 +2,9 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -41,16 +42,11 @@
                   </Button>
                   <Pane prefHeight="96.0" prefWidth="200.0" style="-fx-background-color: white;">
                      <children>
-                        <Label layoutX="62.0" layoutY="27.0" text="ONLINE ">
-                           <font>
-                              <Font name="Bookman Old Style" size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="83.0" layoutY="52.0" text="SHOP">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
+                        <ImageView fitHeight="88.0" fitWidth="89.0" layoutX="60.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../images/logo.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
@@ -60,17 +56,6 @@
             </AnchorPane>
          </children>
       </VBox>
-      <Pane fx:id="dynamiquePage" layoutX="201.0" layoutY="-2.0" prefHeight="428.0" prefWidth="577.0">
-         <children>
-            <Pane layoutX="-1.0" prefHeight="43.0" prefWidth="586.0" style="-fx-background-color: #E96151;">
-               <children>
-                  <Label fx:id="nomUser" alignment="CENTER" layoutX="43.0" layoutY="8.0" prefHeight="17.0" prefWidth="377.0" textFill="#f2eded">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
-         </children></Pane>
+      <Pane fx:id="dynamiquePage" layoutX="201.0" layoutY="-2.0" prefHeight="428.0" prefWidth="577.0" />
    </children>
 </AnchorPane>

@@ -7,11 +7,10 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="574.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.CategorieController">
    <children>
-      <Label layoutX="57.0" layoutY="70.0" text="Label" />
-      <TextField fx:id="champLibelle" layoutX="57.0" layoutY="94.0" prefHeight="25.0" prefWidth="294.0" />
+      <Label layoutX="57.0" layoutY="70.0" text="Libelle" />
+      <TextField fx:id="champLibelle" layoutX="57.0" layoutY="94.0" prefHeight="25.0" prefWidth="294.0" promptText="Libelle" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Button layoutX="57.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnAdd" text="AJOUTER" />
       <Button layoutX="136.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnAnnuler" text="ANNULER" />
       <TableView fx:id="table" layoutX="18.0" layoutY="200.0" onMouseClicked="#charge" prefHeight="200.0" prefWidth="554.0">

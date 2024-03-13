@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -30,7 +31,13 @@ public class RegisterController implements Initializable {
     @FXML
     private TextField champEmail;
     @FXML
-    void btnAnnuler(ActionEvent event)  {
+    void btnAnnuler(ActionEvent event) throws IOException {
+        Parent fxml= FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(fxml);
+        Stage stage=(Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Accueil");
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -46,9 +53,9 @@ public class RegisterController implements Initializable {
 
                 statement.execute();
                 //Navigation vers la page login
-                FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login.fxml"));
-                Scene scene = new Scene(fxmlLoader.load());
-                Stage stage=new Stage();
+                Parent fxml= FXMLLoader.load(getClass().getResource("login.fxml"));
+                Scene scene = new Scene(fxml);
+                Stage stage=(Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
                 stage.setTitle("Login");
                 stage.setScene(scene);
                 stage.show();

@@ -53,10 +53,11 @@ public class CategorieController implements Initializable {
 
     @FXML
     void btnDelete(ActionEvent event) {
+        int id=this.table.getSelectionModel().getSelectedItem().getId();
          String sql="delete from categorie where id=?";
          try {
               PreparedStatement statement=con.prepareStatement(sql);
-              statement.setInt(1,1);
+              statement.setInt(1,id);
               statement.executeUpdate();
          } catch (SQLException e) {
               throw new RuntimeException(e);
@@ -82,7 +83,7 @@ public class CategorieController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
          bd=new BD();
          con=bd.getConnection();
-        affiche();
+         affiche();
 
     }
 }

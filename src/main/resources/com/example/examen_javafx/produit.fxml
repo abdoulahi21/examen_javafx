@@ -8,7 +8,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="399.0" prefWidth="567.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.examen_javafx.ProduitController">
    <children>
       <TableView fx:id="table" layoutX="11.0" layoutY="214.0" onMouseClicked="#charge" prefHeight="200.0" prefWidth="556.0">
@@ -21,13 +20,13 @@
         </columns>
       </TableView>
       <Label layoutX="16.0" layoutY="45.0" text="Libelle" />
-      <TextField fx:id="champLibelle" layoutX="16.0" layoutY="71.0" prefHeight="25.0" prefWidth="225.0" />
+      <TextField fx:id="champLibelle" layoutX="16.0" layoutY="71.0" prefHeight="25.0" prefWidth="225.0" promptText="Libelle" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="16.0" layoutY="107.0" text="Prix" />
-      <TextField fx:id="champPrix" layoutX="16.0" layoutY="133.0" prefHeight="25.0" prefWidth="225.0" />
+      <TextField fx:id="champPrix" layoutX="16.0" layoutY="133.0" prefHeight="25.0" prefWidth="225.0" promptText="Prix" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="274.0" layoutY="45.0" text="Quantité" />
-      <TextField fx:id="champQuantite" layoutX="274.0" layoutY="71.0" prefHeight="25.0" prefWidth="225.0" />
+      <TextField fx:id="champQuantite" layoutX="274.0" layoutY="71.0" prefHeight="25.0" prefWidth="225.0" promptText="Quantité" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Label layoutX="274.0" layoutY="107.0" text="Catégorie" />
-      <ComboBox fx:id="combo" layoutX="274.0" layoutY="133.0" prefHeight="25.0" prefWidth="225.0" />
+      <ComboBox fx:id="combo" layoutX="274.0" layoutY="133.0" prefHeight="25.0" prefWidth="225.0" promptText="Choisir Categorie" style="-fx-background-color: transparent; -fx-border-color: #E96151; -fx-border-width: 0px 0px 1px;" />
       <Button layoutX="16.0" layoutY="179.0" mnemonicParsing="false" onAction="#btnAdd" text="AJOUTER" textFill="#e96151" />
       <Button layoutX="96.0" layoutY="179.0" mnemonicParsing="false" onAction="#btnReset" text="ANNULER" textFill="#e96151" />
       <TextField fx:id="champSearch" layoutX="410.0" layoutY="179.0" onKeyReleased="#onSearch" promptText="recherche" />

@@ -15,7 +15,6 @@ public class ProduitRepository {
     Connection connection;
     public ObservableList<Produit> getAllProduit() {
         connection = bd.getConnection();
-        // List<Medecin> liste = null;
         ObservableList<Produit> list = null;
         try {
             list = FXCollections.observableArrayList();
@@ -42,7 +41,6 @@ public class ProduitRepository {
     //pour rechercher un produit
     public ObservableList<Produit> search(String mot) {
         connection = bd.getConnection();
-        // List<Medecin> liste = null;
         ObservableList<Produit> list = null;
         try {
             list = FXCollections.observableArrayList();
@@ -64,5 +62,28 @@ public class ProduitRepository {
         }
         return list;
     }
-
+    //recuperer les produits avec une quantite inferieur a 5
+    public ObservableList<Produit> recupererQuantiteInferieur() {
+        connection = bd.getConnection();
+        ObservableList<Produit> list = null;
+        try {
+            list = FXCollections.observableArrayList();
+            String sql = "SELECT * FROM produit WHERE quantite < 5";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet rs = statement.executeQuery();
+            while (rs.next()) {
+                Produit produit = new Produit();
+                produit.setId(rs.getInt(1));
+                produit.setLibelle(rs.getString(2));
+                produit.setQuantite(rs.getInt(3));
+                produit.setPrix(rs.getInt(4));
+                produit.setIdcategorie(rs.getInt(5));
+                list.add(produit);
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return list;
     }
+
+}
