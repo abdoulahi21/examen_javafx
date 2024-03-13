@@ -10,10 +10,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -23,6 +20,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class ProduitController implements Initializable {
@@ -115,19 +113,27 @@ public class ProduitController implements Initializable {
     }
     @FXML
     void btnDelete(ActionEvent event) {
-        int id=this.table.getSelectionModel().getSelectedItem().getId();
-        try {
-            String sql=" DELETE FROM categorie WHERE id = ?";
-            PreparedStatement statement=con.prepareStatement(sql);
-            statement.setInt(1,id);
-            statement.executeUpdate();
+        int id = this.table.getSelectionModel().getSelectedItem().getId();
 
-        }catch (SQLException ex)
-        {
-            ex.printStackTrace();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation de suppression");
+        alert.setHeaderText("Êtes-vous sûr de vouloir supprimer cet élément ?");
+        alert.setContentText("Cette action est irréversible.");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            try {
+                String sql = "DELETE FROM categorie WHERE id = ?";
+                PreparedStatement statement = con.prepareStatement(sql);
+                statement.setInt(1, id);
+                statement.executeUpdate();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            affiche();
         }
-        affiche();
     }
+
 
     @FXML
     void charge(MouseEvent event) {

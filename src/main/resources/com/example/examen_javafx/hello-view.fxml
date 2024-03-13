@@ -50,6 +50,11 @@
                         </ImageView>
                      </children>
                   </Pane>
+                  <Button layoutX="22.0" layoutY="265.0" mnemonicParsing="false" onAction="#btnQuitter" prefHeight="33.0" prefWidth="152.0" style="-fx-background-color: #E96151;" text="Quitter" textFill="#f6f5f5">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
                </children>
                <effect>
                   <DropShadow />

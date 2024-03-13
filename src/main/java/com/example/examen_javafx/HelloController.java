@@ -7,9 +7,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -52,6 +55,23 @@ public class HelloController implements Initializable {
         Parent fxml =  FXMLLoader.load(getClass().getResource("statistique.fxml"));
         dynamiquePage.getChildren().removeAll();
         dynamiquePage.getChildren().setAll(fxml);
+    }
+    @FXML
+    void btnQuitter(ActionEvent event) throws IOException {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Quitter");
+        alert.setHeaderText("Voulez-vous vraiment quitter l'application?");
+        alert.showAndWait();
+        if(alert.getResult().getText().equals("OK"))
+        {
+            Parent fxml= FXMLLoader.load(getClass().getResource("login.fxml"));
+            Scene scene = new Scene(fxml);
+            Stage stage=(Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setTitle("Login");
+            stage.setScene(scene);
+            stage.show();
+        }
+
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
