@@ -18,8 +18,10 @@ import java.util.ResourceBundle;
 public class HelloController implements Initializable {
     @FXML
     private Pane dynamiquePage;
-
-
+    @FXML
+    private Label message1;
+    @FXML
+    private Label message;
     BD bd;
     Connection con=null;
 
@@ -55,6 +57,8 @@ public class HelloController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bd=new BD();
         con= bd.getConnection();
+        message.setText(LoginController.userparams);
+        message1.setText("Bienvenue dans votre espace de travail");
 
     }
 }

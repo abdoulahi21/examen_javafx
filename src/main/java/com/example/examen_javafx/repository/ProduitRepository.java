@@ -11,8 +11,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ProduitRepository {
-    BD bd=new BD();
+    BD bd = new BD();
     Connection connection;
+
     public ObservableList<Produit> getAllProduit() {
         connection = bd.getConnection();
         ObservableList<Produit> list = null;
@@ -62,6 +63,7 @@ public class ProduitRepository {
         }
         return list;
     }
+
     //recuperer les produits avec une quantite inferieur a 5
     public ObservableList<Produit> recupererQuantiteInferieur() {
         connection = bd.getConnection();

@@ -24,8 +24,8 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
     BD bd;
     Connection con=null;
-    @FXML
-    private String nomUser;
+    public static String userparams;
+
     @FXML
     private TextField champLogin;
 
@@ -55,7 +55,7 @@ public class LoginController implements Initializable {
            User user= userdao.getconn(login,password);
             if( user !=null )
             {
-                //nomUser="Hello! "+user.getLogin();
+                userparams="HI! "+ user.getLogin();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Connexion réussie");
                 alert.setHeaderText(null);
