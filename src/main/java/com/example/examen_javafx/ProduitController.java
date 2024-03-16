@@ -75,7 +75,7 @@ public class ProduitController implements Initializable {
             statement.setString(1, champLibelle.getText());
             statement.setInt(2, Integer.parseInt(champQuantite.getText()));
             statement.setInt(3, Integer.parseInt(champPrix.getText()));
-              statement.setInt(4, getIdCategorie(combo.getValue().getLibelle()));
+            statement.setInt(4, getIdCategorie(combo.getValue().getLibelle()));
             statement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

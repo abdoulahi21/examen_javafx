@@ -69,7 +69,7 @@
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>
             </Label>
-            <Label fx:id="message1" layoutX="85.0" layoutY="194.0" text="kk" textFill="#e96151">
+            <Label fx:id="message1" layoutX="85.0" layoutY="194.0" textFill="#e96151">
                <font>
                   <Font name="Berlin Sans FB" size="24.0" />
                </font>

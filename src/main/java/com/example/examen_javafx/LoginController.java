@@ -48,9 +48,13 @@ public class LoginController implements Initializable {
     void btnConnect(ActionEvent event) throws IOException {
         String login= champLogin.getText();
         String password=champPassword.getText();
-        if(champLogin.equals("") || champPassword.equals(""))
+        if(login.isEmpty() || password.isEmpty())
         {
-            System.out.println("Veuillez remplir tous les champs");
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erreur");
+            alert.setHeaderText(null);
+            alert.setContentText("Veuillez remplir tous les champs");
+            alert.showAndWait();
         }else {
            User user= userdao.getconn(login,password);
             if( user !=null )
@@ -75,7 +79,6 @@ public class LoginController implements Initializable {
                 alert.setHeaderText(null);
                 alert.setContentText(produitRepository.recupererQuantiteInferieur().toString());
                 alert.showAndWait();
-
             }else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Erreur");
