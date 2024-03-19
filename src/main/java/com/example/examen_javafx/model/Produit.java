@@ -5,9 +5,10 @@ public class Produit {
     private String libelle;
     private int quantite;
     private int prix;
-    private Integer idcategorie;
 
-    public Produit(int id, String libelle, int quantite, int prix, Integer idcategorie) {
+
+    Categorie idcategorie=new Categorie();
+    public Produit(int id, String libelle, int quantite, int prix, Categorie idcategorie) {
         this.id = id;
         this.libelle = libelle;
         this.quantite = quantite;
@@ -50,10 +51,10 @@ public class Produit {
         this.prix = prix;
     }
 
-    public Integer getIdcategorie() {
+    public Categorie getIdcategorie() {
         return idcategorie;
     }
-    public void setIdcategorie(Integer idcategorie) {
+    public void setIdcategorie(Categorie idcategorie) {
         this.idcategorie = idcategorie;
     }
 

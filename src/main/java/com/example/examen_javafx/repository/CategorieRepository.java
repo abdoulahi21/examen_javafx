@@ -33,4 +33,21 @@ public class CategorieRepository {
 
         return list;
     }
+    public Categorie get(int id) {
+        connection = bd.getConnection();
+        Categorie categorie = new Categorie();
+        try {
+            String sql = "SELECT * FROM categorie WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setInt(1, id);
+            ResultSet rs = statement.executeQuery();
+            if (rs.next()) {
+                categorie.setId(rs.getInt(1));
+                categorie.setLibelle(rs.getString(2));
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return categorie;
+    }
 }

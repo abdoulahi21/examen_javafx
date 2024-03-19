@@ -94,7 +94,7 @@ public class DocumentController implements Initializable {
         Stream.of("ID", "Libelle", "Quantite", "Prix", "Idcategorie")
                 .forEach(columnTitle -> {
                     PdfPCell header = new PdfPCell();
-                    header.setBackgroundColor(BaseColor.LIGHT_GRAY);
+                    header.setBackgroundColor(BaseColor.BLUE);
                     header.setBorderWidth(1);
                     header.setPhrase(new Phrase(columnTitle));
                     table.addCell(header);

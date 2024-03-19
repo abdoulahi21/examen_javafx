@@ -1,6 +1,7 @@
 package com.example.examen_javafx.repository;
 
 import com.example.examen_javafx.model.BD;
+import com.example.examen_javafx.model.Categorie;
 import com.example.examen_javafx.model.Produit;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,7 +30,7 @@ public class ProduitRepository {
                 produit.setLibelle(rs.getString(2));
                 produit.setQuantite(rs.getInt(3));
                 produit.setPrix(rs.getInt(4));
-                produit.setIdcategorie(rs.getInt(5));
+                produit.setIdcategorie(new CategorieRepository().get(rs.getInt(5)));
                 list.add(produit);
             }
         } catch (SQLException ex) {
@@ -55,7 +56,7 @@ public class ProduitRepository {
                 produit.setLibelle(rs.getString(2));
                 produit.setQuantite(rs.getInt(3));
                 produit.setPrix(rs.getInt(4));
-                produit.setIdcategorie(rs.getInt(5));
+                produit.setIdcategorie(new CategorieRepository().get(rs.getInt(5)));
                 list.add(produit);
             }
         } catch (SQLException ex) {
@@ -79,7 +80,7 @@ public class ProduitRepository {
                 produit.setLibelle(rs.getString(2));
                 produit.setQuantite(rs.getInt(3));
                 produit.setPrix(rs.getInt(4));
-                produit.setIdcategorie(rs.getInt(5));
+                produit.setIdcategorie(new CategorieRepository().get(rs.getInt(5)));
                 list.add(produit);
             }
         } catch (SQLException ex) {

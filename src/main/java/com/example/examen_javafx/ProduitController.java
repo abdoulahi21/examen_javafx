@@ -5,7 +5,6 @@ import com.example.examen_javafx.model.Categorie;
 import com.example.examen_javafx.model.Produit;
 import com.example.examen_javafx.repository.CategorieRepository;
 import com.example.examen_javafx.repository.ProduitRepository;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,7 +49,6 @@ public class ProduitController implements Initializable {
 
     @FXML
     private TextField champQuantite;
-
     @FXML
     private ComboBox<Categorie> combo;
     @FXML
@@ -66,7 +64,6 @@ public class ProduitController implements Initializable {
             throw new IllegalArgumentException("Catégorie introuvable : " + libelleCategorie);
         }
     }
-
     @FXML
     void btnAdd(ActionEvent event) {
         String sql = "insert into produit(libelle,quantite,prix,idcategorie) values(?,?,?,?)";
@@ -84,13 +81,12 @@ public class ProduitController implements Initializable {
         btnReset(event);
     }
         @FXML
-    void btnReset(ActionEvent event) {
+        void btnReset(ActionEvent event) {
         champLibelle.setText("");
         champPrix.setText("");
         champQuantite.setText("");
         combo.setValue(null);
     }
-
     @FXML
     void btnUpdate(ActionEvent event) {
         int id = this.table.getSelectionModel().getSelectedItem().getId();
@@ -103,8 +99,6 @@ public class ProduitController implements Initializable {
             statement.setString(4, String.valueOf(combo.getValue()));
             statement.setInt(5, id);
             statement.executeUpdate();
-
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -114,12 +108,10 @@ public class ProduitController implements Initializable {
     @FXML
     void btnDelete(ActionEvent event) {
         int id = this.table.getSelectionModel().getSelectedItem().getId();
-
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation de suppression");
         alert.setHeaderText("Êtes-vous sûr de vouloir supprimer cet élément ?");
         alert.setContentText("Cette action est irréversible.");
-
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {
             try {
@@ -134,7 +126,6 @@ public class ProduitController implements Initializable {
         }
     }
 
-
     @FXML
     void charge(MouseEvent event) {
         Produit produit= new Produit();
@@ -144,7 +135,6 @@ public class ProduitController implements Initializable {
          champLibelle.setText(produit.getLibelle());
          champQuantite.setText(String.valueOf(produit.getQuantite()));
          champPrix.setText(String.valueOf(produit.getPrix()));
-
       }
     }
     public void affiche(){
@@ -170,13 +160,12 @@ public class ProduitController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle){
         bd=new BD();
         con=bd.getConnection();
         affiche();
         CategorieRepository categorieRepository=new CategorieRepository();
         ObservableList<Categorie> categorie = categorieRepository.getAllCategorie();
         combo.setItems(categorie);
-
     }
 }
